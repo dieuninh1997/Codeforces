@@ -17,45 +17,39 @@ void solve()
         else if(x==4)s4++;
     }
     int kq=s4;
-    if(s3<s1 && s3>0)
+    if(s3>0)
     {
             kq+=s3;
-             s3=0;
             s1-=s3;
-           // cout<<"\nS3>0 && s3<s1 : kq="<<kq<<"//s1="<<s1<<"//s2="<<s2<<"//s3="<<s3<<endl;
-    }
-    if(s3>0 && s3>s1)
-        {
-
-            kq+=s3;
-            s1=0;
             s3=0;
-          //   cout<<"\nS3>0 && s3>s1 : kq="<<kq<<"//s1="<<s1<<"//s2="<<s2<<"//s3="<<s3<<endl;
-        }
-      if(s1>0)
-      {
-          kq+=s1/4;
-          s1=s1%4;
-       //  cout<<"\nS1>0: kq="<<kq<<"//s1="<<s1<<"//s2="<<s2<<"//s3="<<s3<<endl;
-      }
+         //  cout<<"\nS3>0: kq="<<kq<<"//s1="<<s1<<"//s2="<<s2<<"//s3="<<s3<<endl;
+    }
+    if(s1>0)
+    {
+
+        kq+=s1/4;
+        s1=s1%4;
+     //   cout<<"\nS1>0  : kq="<<kq<<"//s1="<<s1<<"//s2="<<s2<<"//s3="<<s3<<endl;
+    }else
+    {
+        s1=0;
+    }
     if(s2>0)
     {
-       // cout<<"\nSo2:";
         kq+=(s2/2);
         s2=s2%2;
-       // cout<<"\nS2>0 : kq="<<kq<<"//s1="<<s1<<"//s2="<<s2<<"//s3="<<s3<<endl;
-        //cout<<"  s2="<<s2<<"////Kq="<<kq<<endl;
+     //  cout<<"\nS2>0 : kq="<<kq<<"//s1="<<s1<<"//s2="<<s2<<"//s3="<<s3<<endl;
     }
     int s=s1+s2*2+s3*3;
     while(s/4.0>0)
     {
         kq+=1;
-        //cout<<"\nss="<<s<<"///kq="<<kq;
-         s-=4;
-//cout<<"\nThua: kq="<<kq<<"//s1="<<s1<<"//s2="<<s2<<"//s3="<<s3<<endl;
+      //  cout<<"\nss="<<s<<"///kq="<<kq;
+        s-=4;
+    //cout<<"\nThua: kq="<<kq<<"//s1="<<s1<<"//s2="<<s2<<"//s3="<<s3<<endl;
 
     }
-    //cout<<"\ns1="<<s1<<"\ns2="<<s2<<"\ns3="<<s3<<"\nKq="<<kq;
+   // cout<<"\ns1="<<s1<<"\ns2="<<s2<<"\ns3="<<s3<<"\nKq="<<kq;
     cout<<kq;
 
 }
